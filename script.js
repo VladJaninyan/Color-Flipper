@@ -7,6 +7,14 @@ let btn = document.querySelector('button'),
 let hexElementClicked = false,
     rgbElementClicked = false;
 
+if(hexElementClicked === false && rgbElementClicked === false)  {
+    btn.addEventListener('click', (e) => {
+        let randomHexColor = Math.floor(Math.random() * 16777215).toString(16);
+        span.textContent = `#${randomHexColor}`;
+        bg.style.backgroundColor = `#${randomHexColor}`;    
+        });
+}
+
 rgb.addEventListener('click', (e) => {
     hexElementClicked = false;
     rgbElementClicked = true;
@@ -34,11 +42,6 @@ hex.addEventListener('click', (e) => {
     }
 });
 
-// btn.addEventListener('click', (e) => {
-//     let randomHexColor = Math.floor(Math.random() * 16777215).toString(16);
-//     span.textContent = `#${randomHexColor}`;
-//     bg.style.backgroundColor = `#${randomHexColor}`;    
-// });
 
 
 
